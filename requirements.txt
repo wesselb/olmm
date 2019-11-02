@@ -1,0 +1,12 @@
+# Data loading:
+pandas
+pyshp
+
+# Experiment:
+matplotlib
+numpy
+tensorflow>=2
+stheno
+backends
+wbml
+varz
