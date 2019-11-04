@@ -5,7 +5,9 @@ pyshp
 # Experiment:
 matplotlib
 numpy
+autograd
 tensorflow>=2
+torch
 stheno
 backends
 wbml
