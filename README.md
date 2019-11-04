@@ -20,8 +20,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Finally, download the data for the example, which consists of daily 
-temperature measurements across Croatia from 2006.
+Finally, download the data for the example, [which consists of daily 
+temperature measurements across Croatia from 2006](https://spatial-analyst.net/book/HRtemp2006).
 
 ```bash
 sh fetch_data.sh
