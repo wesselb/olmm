@@ -1,30 +1,35 @@
 # OLMM
 
-Sample implementation of the Orthogonal Linear Mixing Model (OLMM)
+Reference implementation of the Orthogonal Linear Mixing Model (OLMM)
 
 ## Installation
 
-Python 3.5 or higher is required.
-To begin with, clone and enter the repo:
+Python 3.6 or higher is required.
+To begin with, clone and enter the repo.
 
 ```bash
 git clone https://github.com/wesselb/olmm
 cd olmm
 ```
 
-The requirements can then be installed:
+Then make a virtual environment and install the requirements.
 
 ```bash
+virtualenv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Finally, download the data:
+Finally, download the data for the example, which consists of daily 
+temperature measurements across Croatia from 2006.
 
 ```bash
 sh fetch_data.sh
 ```
 
 
-## Sample Implementation
+## Reference Implementation
 
-A basic implementation of the OLMM can be found in `example.py`.
+A basic reference implementation of the OLMM can be found in `olmm.py`.
+This implementation is used in `example_autograd.py`, `example_tensorflow.py`,
+and `example_pytorch.py` to make predictions for the data.
