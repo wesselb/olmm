@@ -32,7 +32,7 @@ sh fetch_data.sh
 
 A basic reference implementation of the OLMM can be found in `olmm.py`.
 It illustrates how to do training, inference, and prediction.
-These functions are used with AutoGrad, TensorFlow and PyTorch as 
+These functions are used with AutoGrad, TensorFlow, and PyTorch as 
 backend in `example_autograd.py`, `example_tensorflow.py`, and
 `example_pytorch.py`, respectively.
 The three examples execute the same task of loading and preparing the data,
