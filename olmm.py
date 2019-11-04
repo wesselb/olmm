@@ -5,14 +5,14 @@ from __future__ import absolute_import, division, print_function
 from stheno import (
     B,  # Linear algebra backend
     Graph,  # Graph that keep track of the graphical model
-    GP,  # A Gaussian process
+    GP,  # Gaussian process
     EQ,  # Squared-exponential kernel
     Matern12,  # Matern-1/2 kernel
     Matern52,  # Matern-5/2 kernel
     Delta,  # Noise kernel
     Normal,  # Gaussian distribution
     Diagonal,  # Diagonal matrix
-    dense,  # Convert matrices objects to regular matrices
+    dense,  # Convert matrix objects to regular matrices
 )
 
 __all__ = ['model', 'project', 'objective', 'predict']
@@ -26,7 +26,7 @@ def model(vs, m):
         m (int): Number of latent processes.
 
     Returns:
-        tuple: Tuple containing a list of all the latent processes, the
+        tuple: Tuple containing a list of the latent processes, the
             observation noise, and the noises on the latent processes.
     """
     g = Graph()
@@ -57,7 +57,7 @@ def model(vs, m):
 
 
 def project(vs, m, y_data, locs):
-    """Create projection of data.
+    """Project the data.
 
     Args:
         vs (:class:`varz.Vars`): Variable container.
@@ -67,11 +67,11 @@ def project(vs, m, y_data, locs):
 
     Returns:
         tuple: Tuple containing the projected outputs, the mixing matrix,
-            S of the mixing matrix, and the observation noises.
+            S from the mixing matrix, and the observation noises.
     """
     _, noise_obs, noises_latent = model(vs, m)
 
-    # Compute mixing matrix and projection.
+    # Construct mixing matrix and projection.
     scales = vs.bnd(B.ones(2), name='scales')
     K = dense(Matern52().stretch(scales)(locs))
     U, S, _ = B.svd(K)
@@ -123,7 +123,7 @@ def objective(vs, m, x_data, y_data, locs):
 
 
 def predict(vs, m, x_data, y_data, locs, x_pred):
-    """Construct predictions.
+    """Make predictions.
 
     Args:
         vs (:class:`varz.Vars`): Variable container.
