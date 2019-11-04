@@ -31,5 +31,8 @@ sh fetch_data.sh
 ## Reference Implementation
 
 A basic reference implementation of the OLMM can be found in `olmm.py`.
-This implementation is used in `example_autograd.py`, `example_tensorflow.py`,
-and `example_pytorch.py` to make predictions for the data.
+It illustrates how to execute the training, the inference and the prediction processes.
+This construction is implementated using Autograd, Tensorflow and PyTorch as backends, in `example_autograd.py`, 
+`example_tensorflow.py`, and `example_pytorch.py`, respectively. The three examples execute the 
+exact same task of loading and preparing the data, fitting a simple OLMM, executing predictions and
+plotting some of the latent processes and some of the outputs.
