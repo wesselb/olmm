@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import absolute_import, division, print_function
-
 from stheno import (
     B,  # Linear algebra backend
     Graph,  # Graph that keep track of the graphical model
