@@ -15,7 +15,7 @@ cd olmm
 Then make a virtual environment and install the requirements.
 
 ```bash
-virtualenv venv
+virtualenv -p python3 venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
